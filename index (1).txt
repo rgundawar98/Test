@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="title">
+            Invoice Form
+        </div>
+        <div class="content">
+            <form action="forms.php">
+                <div class="user-details">
+                    <div class="input-box" id="pname">
+                        <span class="details">Party Name</span>
+                        <input type="text" name="Pname" placeholder="Enter party name" required>
+                    </div>
+                    <div class="input-box" id="mnuber">
+                        <span class="details">Mobile number</span>
+                        <input type="text" name="MobNumber"  placeholder="Enter Mobile number" required>
+                    </div>
+                    <div class="input-box" id="date">
+                        <span class="details">Date</span>
+                        <input type="date" name="date"  placeholder="Enter date" required>
+                    </div>
+                    <div class="temp">
+                        <div class="title">
+                            Particulars
+                        </div>
+                        <div class="input-box" id="pname">
+                            <span class="details">Product Name</span>
+                            <input type="text" name="PName"  placeholder="Enter Product name" required>
+                        </div>
+                        <div class="input-box" id="price">
+                            <span class="details">Price</span>
+                            <input type="text" name="price"  placeholder="Enter price" required>
+                        </div>
+                        <div class="input-box" id="quantity">
+                            <span class="details">Quantity</span>
+                            <input type="text" name="Quantity"  placeholder="Enter quantity" required>
+                        </div>
+                        <div class="input-box" id="cg">
+                            <span class="details">CGST</span>
+                            <input type="text" name="CGST"  placeholder="Enter CGST" required>
+                        </div>
+                        <div class="input-box" id="sg">
+                            <span class="details">SGST</span>
+                            <input type="text" name="SGST"  placeholder="Enter SGST" required>
+                        </div>
+                        <div class="input-box" id="amount">
+                            <span class="details">Amount</span>
+                            <input type="text" name="Amount"  placeholder="Enter amount" required>
+                        </div>
+                    </div>
+
+
+                    <div class="input-box" id="tamount">
+                        <span class="details">Total Amount</span>
+                        <input type="text" name="TAmount"  placeholder="Enter total amount" required>
+                    </div>
+
+                    <div class="input-box" id="Tgst">
+                        <span class="details">Total Sgst and Cgst</span>
+                        <input type="text" name="TGST" placeholder="total cgst and sgst" required >
+                    </div>
+
+
+                    <div class="input-box" id="tpamount">
+                        <span class="details">Total Payable Amount</span>
+                        <input type="text" name="TPAmount"  placeholder="Payable amount" required>
+                    </div>
+
+                    <div class="input-box" id="awords">
+                        <span class="details">Amount in words</span>
+                        <input type="text" name="Awords"  placeholder="amount in words" required>
+                    </div>
+                </div>
+
+        </div>
+        <div id="mybutton">
+            <!-- <input type="button" onclick="myFunction()" value="Submit Invoice"> -->
+            <button onclick="store()" type="button">submit invoice</button>
+        </div>
+        </form>
+    </div>
+    </div>
+
+    <script>
+        // function myFunction()
+        // {
+        //    document.getElementById("mybutton");
+        // }
+
+        function sum()
+        {
+            num1 = document.getElementById("cg").value;
+            num2 = document.getElementById("sg").value;                        
+            document.getElementById("Tgst").innerHTML = num1+num2;
+        }
+        function multiply()
+        {
+            num3 = document.getElementById("price").value;
+            num4 = document.getElementById("quantity").value;                        
+            document.getElementById("tamount").innerHTML = num3*num4;
+        }
+        function total()
+        {
+            num5 = document.getElementById("Tgst").value;
+            num6 = document.getElementById("tamount").value;                        
+            document.getElementById("tpamount").innerHTML = num5+num6;
+        }
+        function store() {
+            var button = document.getElementById("mybutton");
+            localStorage.setItem("mybutton", submitinvoice.value);
+        }
+
+    </script>
+</body>
+
+</html>
